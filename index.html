@@ -63,7 +63,7 @@
           if (!loggedIn) {
             // check login
             window.top.location.href =
-              `${API_CONFIG.url}/login?qlik-web-integration-id=${API_CONFIG.webIntegrationId}&returnto=${top.location.href}`;
+              `${API_CONFIG.url}login?qlik-web-integration-id=${API_CONFIG.webIntegrationId}&returnto=${top.location.href}`;
             throw new Error("not logged in");
           }
 
