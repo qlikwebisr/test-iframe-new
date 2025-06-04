@@ -82,7 +82,8 @@
           const iframe = document.getElementById("dynamicIframe");
 
           // Create a fetch request with authentication headers
-          fetch(API_CONFIG.url + "sense/app/b04d4004-923e-4f44-b968-f68ca37e59d4", {
+          fetch(API_CONFIG.url + "api/v1/users/me", {
+         // fetch(API_CONFIG.url + "sense/app/b04d4004-923e-4f44-b968-f68ca37e59d4", {
             method: "GET",
             headers: {
               Authorization: `Bearer ${API_CONFIG.token}`,
@@ -97,6 +98,8 @@
               return response.text();
             })
             .then((html) => {
+                console.log('html', html);
+                
               const blob = new Blob([html], { type: "text/html" });
               const url = URL.createObjectURL(blob);
               iframe.src = url;
