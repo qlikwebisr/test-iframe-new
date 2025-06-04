@@ -58,6 +58,8 @@
               "qlik-web-integration-id": API_CONFIG.webIntegrationId,
             },
           }).then((response) => {
+            console.log("Response status:", response);
+            
             return response.status === 200;
           });
         }
